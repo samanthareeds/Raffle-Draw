@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Draws</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Drawtype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @draws.each do |draw| %>
+      <tr>
+        <td><%= draw.email %></td>
+        <td><%= draw.drawtype %></td>
+        <td><%= link_to 'Show', draw %></td>
+        <td><%= link_to 'Edit', edit_draw_path(draw) %></td>
+        <td><%= link_to 'Destroy', draw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Draw', new_draw_path %>
