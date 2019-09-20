@@ -12,7 +12,7 @@ class DrawsController < ApplicationController
   # GET /draws/1
   # GET /draws/1.json
   def show
-    @d = Draw.find_by_id(params[:id])
+    @draw_data = Draw.find_by_id(params[:id])
   end
 
   # GET /draws/new
