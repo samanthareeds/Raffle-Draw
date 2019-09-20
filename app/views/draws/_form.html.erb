@@ -19,8 +19,9 @@
 
   <div class="field">
     <%= form.label :drawtype %>
-    <% options = options_from_collection_for_select(@raffles, 'name') %>
-    <%= form.select :drawtype,  options %>
+    
+    <%= form.collection_select :raffles, Raffle.all, :id, :name, { :prompt => "Please Select" } %>
+    
    
   </div>
 

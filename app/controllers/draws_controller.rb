@@ -12,7 +12,7 @@ class DrawsController < ApplicationController
   # GET /draws/1
   # GET /draws/1.json
   def show
-    @draw_data = Draw.find_by_id(params[:id])
+    @draw_data = Draw.find_by_id params[:id]
   end
 
   # GET /draws/new
@@ -27,12 +27,7 @@ class DrawsController < ApplicationController
   # POST /draws
   # POST /draws.json
   def create
-    draw = Draw.first_or_initialize(:name => self.name, :email => self.email)
-    if !draw.new_record?
-      format.html { notice: 'Duplicate Entry!' }
-    else
-      @draw = Draw.new(draw_params)
-    end
+    @draw = Draw.new(draw_params)
     respond_to do |format|
       if @draw.save
         format.html { redirect_to @draw, notice: 'Draw was successfully created.' }

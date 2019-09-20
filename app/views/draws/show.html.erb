@@ -1,3 +1,3 @@
 <p>Thank you for Signing up to our Draw.</p>
-<%current_count = Draw.where(name: @draw_data.name ).count%>
-<p>Your odds of winning is </p>  <%=100/current_count/%> %
+<%current_count = Draw.where(drawtype: @draw.drawtype ).count%>
+<p>Your odds of winning is   <%=100/current_count%> %</p>
