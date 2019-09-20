@@ -1,2 +1,4 @@
 <p>Thank you for Signing up to our Draw.</p>
-<p>Your odds of winning is </p> <%=rand(0.0...1.0)%>
+<%%>
+<%current_count = Draw.where(name: @d.name ).count%>
+<p>Your odds of winning is </p> <%=100/current_count/%>

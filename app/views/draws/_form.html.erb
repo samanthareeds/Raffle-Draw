@@ -19,7 +19,9 @@
 
   <div class="field">
     <%= form.label :drawtype %>
-    <%= form.select :drawtype, ["Win a kid's toy","Win a perfume", "Win a steak dinner"], :prompt => 'Select One Draw Category' %>
+    <% options = options_from_collection_for_select(@raffles, 'name') %>
+    <%= form.select :drawtype,  options %>
+   
   </div>
 
   <div class="actions">
